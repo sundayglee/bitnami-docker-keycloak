@@ -26,7 +26,7 @@ start_command=("${KEYCLOAK_BIN_DIR}/kc.sh -cf ${conf_file} ${start_param}")
 # Add extra args
 if [[ -n "$KEYCLOAK_EXTRA_ARGS" ]]; then
     read -r -a extra_args <<<"$KEYCLOAK_EXTRA_ARGS"
-    start_command+=("${extra_args[@]}")
+    start_command+=" ${extra_args[@]}"
 fi
 
 if am_i_root; then
